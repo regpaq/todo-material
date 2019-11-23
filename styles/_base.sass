@@ -1,0 +1,291 @@
+// add your custom styles here
+body
+  background: $gray-lighter
+
+  .wrapper
+    min-height: calc(100vh - 50px)
+
+  button
+    background: none
+    border: none
+    outline: none
+    margin: 0
+    padding: 0
+    border-radius: 0
+    -webkit-appearance: none
+    -moz-appearance: none
+
+  button:focus
+    outline: none
+
+
+header
+  background-color: $brand-primary
+  color: #ffffff
+  box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28)
+  transition: background-color 0.3s ease-in
+
+  .container-fluid
+    padding: .5rem 0
+    margin-bottom: 2rem
+
+  .row
+    margin: 0 auto
+    max-width: 1440px
+
+  .row > *
+    padding: .5rem 1rem
+
+  ul
+    list-style: none
+    display: inline-flex
+
+  h1
+    font-size: 1.5rem
+    margin: 0
+
+header.done
+  background-color: $gray-dark
+
+  ul#toggle
+    li#done_toggle.active
+      color: $gray-dark
+
+  #add_todo_container
+    visibility: hidden
+    opacity: 0
+
+
+#add_todo_container
+  margin: .2rem 0
+  visibility: visible
+  opacity: 1
+  transition: opacity 0.3s ease-in
+  flex-wrap: wrap
+
+  span, input
+    background-color: $todo-input
+    border: none
+    outline: none
+    color: #ffffff
+    -webkit-appearance: none
+    -moz-appearance: none
+
+  span
+    cursor: pointer
+    border-radius: 0
+    border-top-left-radius: 0.25rem
+
+  input
+    min-width: 240px
+    flex-direction: row
+    border-top-right-radius: 0.25rem
+
+  input[type=date]
+    padding-left: 60px
+    border-radius: 0.25rem
+    border-top-left-radius: 0
+    border-top-right-radius: 0
+    border-top: $brand-primary solid 1px
+    color: rgba(255, 255, 255, 0.50)
+
+  input[type=date]:before
+    content:attr(placeholder) !important
+    color: rgba(255, 255, 255, 0.50)
+    margin-right: 0.5rem
+
+  input[type=date]:focus:before
+  input[type=date]:valid:before
+    content: ""
+
+  input[type=date].full
+    color: #ffffff
+
+  input::-webkit-input-placeholder
+    color: rgba(255, 255, 255, 0.50)
+
+  input::-moz-placeholder
+    color: rgba(255, 255, 255, 0.50)
+
+  input:-ms-input-placeholder
+    color: rgba(255, 255, 255, 0.50)
+
+  input:-moz-placeholder
+    color: rgba(255, 255, 255, 0.50)
+
+
+#toggle
+  margin: 0
+  justify-content: flex-end
+  text-transform: uppercase
+  font-size: .75rem
+  font-weight: bold
+  color: $toggle
+
+  li
+    padding: .2rem .5rem
+    background: inherit
+    border-radius: .25rem
+    border: 1px solid $toggle
+    cursor: pointer
+
+  li:first-child
+    border-top-right-radius: 0px
+    border-bottom-right-radius: 0px
+
+  li:last-child
+    border-top-left-radius: 0px
+    border-bottom-left-radius: 0px
+    border-left: none
+
+  li.active
+    background: #ffffff
+    color: $brand-primary
+
+  li:last-of-type:not(.active)
+    box-shadow: inset 16px 0px 12px rgba(28, 79, 165,0.18)
+
+  li:first-of-type:not(.active)
+    box-shadow: inset -16px 0px 12px rgba(28, 79, 165,0.18)
+
+
+#todo_section.visible,
+#done_section.visible
+  opacity: 1
+  transition: opacity 0.3s ease-in
+
+  ul
+    position: relative
+    z-index: 100
+
+#todo_section,
+#done_section
+  opacity: 0
+  height: 0
+  transition: all 0s
+
+  ul
+    position: relative
+    z-index: 100
+    background: #ffffff
+    padding: 0
+    box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24)
+
+  li
+    border: 1px solid $gray-light
+    border-bottom: none
+    padding: .75rem 3rem
+    list-style: none
+    position: relative
+
+    button
+      position: absolute
+      left: .75rem
+      cursor: pointer
+
+    button.remove
+      right: .75rem
+      left: inherit
+      top: 1rem
+
+    button.remove .material-icons
+      color: $gray
+      opacity: .75
+      font-size: 1.3rem
+      transition: opacity 0.3s ease
+
+    .material-icons
+      color: $gray
+      transition: color 0.3s ease
+
+    .material-icons:hover
+      color: $gray-dark
+
+    button.remove .material-icons:hover
+      color: $gray
+      opacity: 1
+
+  li:last-child
+    border-bottom: 1px solid $gray-light
+
+
+#done_section
+  li
+    .material-icons
+      color: $brand-success
+
+    .material-icons:hover
+      color: $brand-success
+
+    .delete
+      color: $gray
+      opacity: .75
+
+    .delete:hover
+      color: $gray
+      opacity: 1
+
+ul#todo_list_ul:empty,
+ul#completed_list_ul:empty
+  box-shadow: none
+
+ul#todo_list_ul:empty:after
+  content: 'Let\'s get to work! Start by adding a new to-do'
+  margin: 15px 0 0 0
+
+ul#completed_list_ul:empty:after
+  content: 'You haven\'t completed any tasks yet'
+
+ul#todo_list_ul:after,
+ul#completed_list_ul:after
+  width: 100%
+  display: block
+  text-align: center
+  font-size: 12px
+  color: $gray
+  background: $gray-lighter
+  box-shadow: none
+
+
+footer
+  text-align: center
+  font-size: .75rem
+  padding: 1rem 0
+
+  p
+    margin: 0
+
+  a
+    color: $gray
+
+
+@media screen and (min-width: 360px)
+  #toggle li
+    padding: .2rem .84rem
+
+
+@media screen and (min-width: 559px)
+  #add_todo_container
+    span
+      border-radius: 0.25rem
+      border-top-right-radius: 0
+      border-bottom-right-radius: 0
+
+    input[type=text]
+      min-width: initial
+      border-radius: 0
+
+    input[type=date]
+      max-width: 250px
+      min-width: 250px
+      padding-left: 0.75rem
+      border-top: none
+      border-left: $brand-primary solid 1px
+      border-radius: 0.25rem
+      border-top-left-radius: 0
+      border-bottom-left-radius: 0
+
+
+@media screen and (min-width: 991px)
+  #add_todo_container
+    margin: 0 0 0

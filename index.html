@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Five Days</title>
+    <link href="styles/css/app.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <!-- <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> -->
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header id="header">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-lg-2 col-6">
+              <h1 id="site_title">To-Do</h1>
+            </div>
+            <ul id="toggle" class="col-lg-2 push-lg-8 col-6">
+              <li id="todo_toggle" class="active">to-do</li>
+              <li id="done_toggle">done</li>
+            </ul>
+            <div class="col-lg-8 pull-lg-2">
+              <div id="add_todo_container" class="input-group">
+                <button id="add"><span class="input-group-addon" id="basic-addon1"><i class="material-icons">add</i></span></button>
+                <input type="text" id="item" class="form-control" placeholder="Add a new to-do" aria-label="Add a new to-do" aria-describedby="basic-addon1">
+                <input type="date" id="dueDate" class="form-control" placeholder="Due date:" aria-describedby="basic-addon1">
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section id="todo_section" class="visible">
+        <div class="container" id="todo_list">
+          <ul id="todo_list_ul"></ul>
+        </div>
+      </section>
+      <section  id="done_section">
+        <div class="container" id="done_list">
+          <ul id ="completed_list_ul"></ul>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p><a href="www.regpaq.com">regpaq.com</a></p>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script> -->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
