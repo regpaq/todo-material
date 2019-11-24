@@ -5631,7 +5631,7 @@ header {
   background-color: #4285f4;
   color: #ffffff;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
-  transition: background-color 0.3s ease-in; }
+  transition: background-color 0.3s ease; }
   header .container-fluid {
     padding: .5rem 0;
     margin-bottom: 2rem; }
@@ -5659,7 +5659,7 @@ header.done {
   margin: .2rem 0;
   visibility: visible;
   opacity: 1;
-  transition: opacity 5.3s ease;
+  transition: opacity 0.3s ease;
   flex-wrap: wrap; }
   #add_todo_container span, #add_todo_container input {
     background-color: rgba(255, 255, 255, 0.15);
@@ -5683,12 +5683,14 @@ header.done {
     border-top-right-radius: 0;
     border-top: #4285f4 solid 1px;
     color: rgba(255, 255, 255, 0.5); }
-  #add_todo_container input[type=date]:before {
+  #add_todo_container input[type=date]:before {    
     content: attr(placeholder) !important;
     color: rgba(255, 255, 255, 0.5);
     margin-right: 0.5rem; }
   #add_todo_container input[type=date]:valid:before {
     content: ""; }
+  input::-webkit-date-and-time-value {
+    margin-right: auto; };
   #add_todo_container input[type=date].full {
     color: #ffffff; }
   #add_todo_container input::-webkit-input-placeholder {
@@ -5699,6 +5701,8 @@ header.done {
     color: rgba(255, 255, 255, 0.5); }
   #add_todo_container input:-moz-placeholder {
     color: rgba(255, 255, 255, 0.5); }
+  #add_todo_container input[type=date].full {
+    color: #ffffff; }
 
 #toggle {
   margin: 0;
@@ -5731,9 +5735,11 @@ header.done {
 #todo_section.visible,
 #done_section.visible {
   opacity: 1;
-  transition: opacity 0.3s ease-in; }
+  transition: opacity 0.3s ease-in;
+  display: block; }
   #todo_section.visible ul,
   #done_section.visible ul {
+    opacity: 1;
     position: relative;
     z-index: 100; }
 
@@ -5744,6 +5750,7 @@ header.done {
   transition: all 0s; }
   #todo_section ul,
   #done_section ul {
+    opacity: 0;
     position: relative;
     z-index: 100;
     background: #ffffff;
@@ -5753,14 +5760,10 @@ header.done {
   #done_section li {
     border: 1px solid #d5dadd;
     border-bottom: none;
-    padding: .75rem 3rem;
+    padding: .7rem 8rem .7rem 3rem;
     list-style: none;
     position: relative; }
-    .itemDate {
-      position: absolute;
-      display: inline;
-      right: 3rem;
-    }
+    
     #todo_section li button,
     #done_section li button {
       position: absolute;
@@ -5827,18 +5830,25 @@ ul#completed_list_ul:after {
   background: #eceeef;
   box-shadow: none; }
 
+.itemDate {
+  display: block; 
+  padding-top: 1rem; }
+
 footer {
   text-align: center;
   font-size: .75rem;
   padding: 1rem 0; }
-  footer p {
-    margin: 0; }
-  footer a {
-    color: #808080; }
+footer p {
+  margin: 0; }
+footer a {
+  color: #808080; }
 
 @media screen and (min-width: 360px) {
   #toggle li {
-    padding: .2rem .84rem; } }
+    padding: .2rem .84rem; }
+
+  #done_section li {
+    padding: .7rem 3rem; } }
 
 @media screen and (min-width: 559px) {
   #add_todo_container span {
@@ -5856,7 +5866,13 @@ footer {
     border-left: #4285f4 solid 1px;
     border-radius: 0.25rem;
     border-top-left-radius: 0;
-    border-bottom-left-radius: 0; } }
+    border-bottom-left-radius: 0; }
+  .itemDate {
+    position: absolute;
+    display: inline;
+    right: 3rem;
+    top: 1rem;
+    padding-top: 0; } }
 
 @media screen and (min-width: 991px) {
   #add_todo_container {
