@@ -5760,7 +5760,7 @@ header.done {
   #done_section li {
     border: 1px solid #d5dadd;
     border-bottom: none;
-    padding: .7rem 8rem .7rem 3rem;
+    padding: .7rem 3rem .7rem 3rem;
     list-style: none;
     position: relative; }
     
@@ -5832,7 +5832,8 @@ ul#completed_list_ul:after {
 
 .itemDate {
   display: block; 
-  padding-top: 1rem; }
+  padding-top: 1rem;
+  color: #99a3b5; }
 
 footer {
   text-align: center;
@@ -5871,8 +5872,11 @@ footer a {
     position: absolute;
     display: inline;
     right: 3rem;
-    top: 1rem;
-    padding-top: 0; } }
+    top: .7rem;
+    padding-top: 0;}
+  #todo_section li,
+  #done_section li {
+    padding: .7rem 8rem .7rem 3rem; } }
 
 @media screen and (min-width: 991px) {
   #add_todo_container {
